@@ -16,7 +16,6 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     borderColor: 'black',
     height: 200,
-    alignItems: 'flex-end'
   },
   textOneStyle: {
     borderWidth: 3,
@@ -25,12 +24,14 @@ const styles = StyleSheet.create({
   textTwoStyle: {
     borderWidth: 3,
     borderColor: 'red',
-    position: 'absolute',
-    fontSize: 18
+    bottom: 10,
+    left: 10
   },
   textThreeStyle: {
     borderWidth: 3,
     borderColor: 'red',
+    top: 10,
+    right: 10
   }
 });
 
