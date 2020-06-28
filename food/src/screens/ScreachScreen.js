@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import SearchBar from "../components/SearchBar";
+import { YELP_API_KEY } from 'react-native-dotenv'
 
 const SearchScreen = () => {
   const [term, setTerm] = useState('');
