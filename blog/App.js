@@ -1,8 +1,9 @@
+import React from 'react';
 import {createAppContainer} from "react-navigation";
 import { createStackNavigator } from 'react-navigation-stack';
 import IndexScreen from "./src/screens/IndexScreen";
 
-const navigrator = createStackNavigator({
+const navigator = createStackNavigator({
   Index: IndexScreen
 }, {
   initialRouteName: 'Index',
@@ -10,5 +11,7 @@ const navigrator = createStackNavigator({
     title: 'Blogs'
   }
 });
-
-export default  createAppContainer(navigrator);
+const App = createAppContainer(navigator);
+export default () => {
+  return <App />
+};
