@@ -1,8 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const authRoutes = require('./routes/authRoutes');
 require('dotenv').config();
 
 const app = express();
+app.use(authRoutes);
 
 const mongoUri = `mongodb+srv://track:${process.env.DB_PASSWORD}@track.g6ido.mongodb.net/trackDb?retryWrites=true&w=majority`;
 
