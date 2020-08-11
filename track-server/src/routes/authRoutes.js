@@ -7,14 +7,12 @@ const router = express.Router();
 
 router.post('/signup', async (req, res) => {
   const {email, password} = req.body;
-
   try {
     const user = new User({email, password});
     await user.save();
     const token = jwt.sign({userId: user._id}, 'my-secret-key');
     res.send({token});
   } catch (err) {
-    console.log(err);
     return res.status(422).send(err.message);
   }
 });
@@ -32,7 +30,7 @@ router.post('/signin', async (req, res) => {
   }
 
   try {
-    await user.comparePassword(user.password);
+    await user.comparePassword(password);
     const token = jwt.sign({userId: user._id}, 'my-secret-key');
     res.send({token});
   } catch (err) {
